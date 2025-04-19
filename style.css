@@ -1,0 +1,759 @@
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    padding-top: 80px;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+    background: linear-gradient(270deg, #4CAF50, #2E7D32);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.menu-hidden {
+    left: -100% !important;
+}
+.logo {
+    color: white;
+    font-weight: bold;
+    line-height: 80px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    padding: 0 10px;
+    font-size: clamp(18px, 4vw, 24px);
+    min-width: max-content;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 7px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 7px 8px;
+}
+
+.checkbtn {
+    font-size: 30px;
+        color: white;
+        cursor: pointer;
+        display: none;
+        transition: all 0.3s ease;
+        line-height: 80px;
+        padding: 0 20px;
+        margin: 0;
+}
+
+.checkbtn:hover {
+    transform: scale(1.1);
+}
+
+#check {
+    display: none;
+}
+
+/* ===== FOOTER STYLES ===== */
+footer {
+    background: linear-gradient(270deg, #4CAF50, #2E7D32);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ===== INDEX PAGE STYLES ===== */
+.welcomepage {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcomepage img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcomepage p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.welcomepage h2 {
+    color: #2E7D32;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.welcomepage button {
+    background: linear-gradient(270deg, #4CAF50, #2E7D32);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.welcomepage button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.welcomepage button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== ABOUT PAGE STYLES ===== */
+.about,
+.about1 {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about p {
+    text-align: left;
+}
+
+.about img,
+.about1 img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about h2,
+.about1 h2 {
+    color: #2E7D32;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.about p,
+.about1 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about button {
+    background: linear-gradient(270deg, #4CAF50, #2E7D32);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.about button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== SERVICES PAGE STYLES ===== */
+.services1,
+.services2,
+.services3 {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services1 h2,
+.services2 h2,
+.services3 h2 {
+    color: #2E7D32;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.services1 p,
+.services2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.services1 ul {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.services3 ul img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services1 li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.services2 img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services3 ul {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.services3 li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* ===== CONTACT PAGE STYLES ===== */
+.contact-info1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contactpage {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contactpage h2 {
+    font-size: 36px;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contactpage h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 70px;
+    height: 3px;
+    background: #2a7d2e;
+}
+
+.contactpage p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #555;
+}
+
+.contactpage button {
+    background: #2a7d2e;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contactpage button:hover {
+    background: #1e5e22;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contactpage button a {
+    color: white;
+    text-decoration: none;
+}
+
+.location-details {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.location-details p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.location-details i {
+    margin-right: 15px;
+    color: #2a7d2e;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+}
+
+.location-details a {
+    color: #2a7d2e;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.location-details a:hover {
+    color: #1e5e22;
+    text-decoration: underline;
+}
+
+/* ===== TOGGLE MENU FIXES ===== */
+@media (max-width: 767px) {
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(245.45deg, #4CAF50, #2E7D32);
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        z-index: 1000;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .checkbtn {
+        display: block;
+        z-index: 1001;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    /* Page content adjustments */
+    .welcomepage,
+    .about,
+    .about1,
+    .services1,
+    .services2,
+    .services3,
+    .contact-info1 {
+        padding: 40px 15px;
+    }
+
+    .welcomepage h2,
+    .about h2,
+    .about1 h2,
+    .services1 h2,
+    .services2 h2,
+    .services3 h2,
+    .contactpage h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        padding: 0 10px;
+        top: 0;
+        margin-top: 0;
+        background: linear-gradient(245.45deg, #4CAF50, #2E7D32);
+        /* Change to match your header color */
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        padding-top: 70px;
+        /* Matches nav height exactly */
+    }
+
+    .logo {
+        font-size: clamp(16px, 5vw, 18px);
+        line-height: 1.3;
+        padding-top: 10px;
+        height: 70px;
+    }
+
+    .checkbtn {
+        font-size: 25px;
+        line-height: 70px;
+    }
+
+    nav ul {
+       }
+        nav ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                position: fixed;
+                top: 80px;    
+                background: linear-gradient(245.45deg, #4CAF50, #2E7D32);
+                list-style: none;
+                top: 80px;
+                left: 0;
+                text-align: center;
+                transition: all 0.5s;
+                flex-direction: column;
+                padding-top: 20px;
+            }
+        
+            nav ul li {
+                margin: 20px 0;
+            }
+        
+            nav ul li a {
+                font-size: 18px;
+            }*/
+       
+    }
+
+    /* If you have list items in your menu, add this */
+    nav ul li {
+        padding: 8px 15px;
+        margin: 0 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        
+        /* Optional separator */
+    }
+
+    footer {
+        padding: 12px 0;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    .welcomepage h2,
+    .about h2,
+    .about1 h2,
+    .services1 h2,
+    .services2 h2,
+    .services3 h2,
+    .contactpage h2 {
+        font-size: 1.5rem;
+    }
+
+    .welcomepage p,
+    .about p,
+    .about1 p,
+    .services1 p,
+    .services2 p,
+    .services3 li,
+    .contactpage p,
+    .location-details p {
+        font-size: 1rem;
+    }
+
+    .services3 ul {
+        padding-left: 15px;
+    }
+
+    .services3 ul li {
+        text-align: left;
+    }
+}
+/* Additional Media Queries */
+@media (max-width: 600px) {
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        padding: 0 10px;
+        top: 0;
+        margin-top: 0;
+        background: linear-gradient(245.45deg, #4CAF50, #2E7D32);
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        /* Adjusted to start right below nav */
+        left: 0;
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0 0 0;
+        /* Added 10px top padding only */
+        background: linear-gradient(245.45deg, #4CAF50, #2E7D32);
+        list-style: none;
+    }
+
+    nav ul li {
+        padding: 8px 15px;
+        /* Consistent padding */
+        margin: 5px 0;
+        /* Reduced vertical margin */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Subtle separator */
+    }
+
+    .welcomepage {
+        padding: 60px 15px;
+    }
+
+    .welcomepage img {
+        max-width: 80%;
+    }
+}
+
+/* Landscape Orientation Fix */
+@media (max-width: 600px) and (orientation: landscape) {
+    nav ul {
+        display: flex;
+        height: 400px;
+        max-height: 70vh;
+        /* Use viewport height units */
+        overflow-y: auto;
+        /* Enable scrolling if needed */
+        padding-top: 5px;
+        /* Reduce top padding */
+    }
+
+    nav ul li {
+        padding: 6px 10px;
+        /* Slightly reduced padding */
+        margin: 3px 0;
+        /* Reduced margin */
+        font-size: 0.9em;
+        /* Optional: slightly smaller text */
+    }
+
+    /* Optional: Two-column layout for very wide screens */
+    @media (min-aspect-ratio: 4/3) {
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            width: 50%;
+            box-sizing: border-box;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .contact-info1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactpage,
+    .location-details {
+        flex: 1 0 100%;
+        margin-bottom: 20px;
+    }
+        nav {
+            padding: 0 20px;
+        }
+    
+        .checkbtn {
+            display: block;
+        }
+    
+        nav ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #2a7d2e;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all 0.5s;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+    
+        nav ul li {
+            margin: 20px 0;
+        }
+    
+        nav ul li a {
+            font-size: 18px;
+        }
+    
+        #check:checked~ul {
+            left: 0;
+        }
+}
+@media (max-width: 480px) and (orientation: landscape) {
+    nav ul {
+        height: auto;
+        /* Remove fixed height */
+        max-height: calc(100vh - 70px);
+        /* Still limit to viewport */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        /* Allow items to wrap in columns */
+        align-content: flex-start;
+    }
+
+    nav ul li {
+        width: 50%;
+        /* Split into two columns */
+        box-sizing: border-box;
+        padding: 5px 10px;
+    }
+
+    /* Adjust font sizes if needed */
+    nav ul li a {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        /* Prevent text wrapping */
+    }
+
+    /* Reduce top padding if needed */
+    body {
+        padding-top: 60px;
+    }
+
+    nav {
+        height: 60px;
+    }
+
+    .logo,
+    .checkbtn {
+        line-height: 60px;
+    }
+
+    nav ul {
+        top: 60px !important;
+    }
+}
+
+/* Portrait adjustments remain the same */
+@media (max-width: 480px) and (orientation: portrait) {
+
+    /* Your existing portrait CSS */
+    nav ul {
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+}
