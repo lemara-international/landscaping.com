@@ -7,19 +7,516 @@
     <title>Services - Lemara International</title>
     <!-- Box Icons for menu button -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Services Page Specific Styles */
+.services-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('roadss.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.services-hero .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.services-hero .hero-content p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main Services Section */
+.main-services {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: #2a7d2e;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #2a7d2e;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.service-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #444;
+}
+
+.service-features i {
+    color: #2a7d2e;
+    margin-right: 10px;
+}
+
+/* Comprehensive Solutions Section */
+.comprehensive-solutions {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.comprehensive-solutions .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.solutions-content {
+    flex: 1;
+}
+
+.solutions-content h2 {
+    font-size: 36px;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+}
+
+.solutions-content p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.solution-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.solution-icon {
+    font-size: 24px;
+    color: #2a7d2e;
+    margin-top: 5px;
+}
+
+.solution-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.solution-text p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.solutions-image {
+    flex: 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.solutions-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.solutions-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(42, 125, 46, 0.8);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Additional Services Section */
+.additional-services {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.additional-service {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.additional-service.reverse {
+    flex-direction: row-reverse;
+}
+
+.additional-service img {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.service-details {
+    padding: 30px;
+    width: 50%;
+}
+
+.service-details h3 {
+    font-size: 24px;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+}
+
+.service-details p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-details ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.service-details li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #444;
+}
+
+.service-details li::before {
+    content: '•';
+    color: #2a7d2e;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Service Process Section */
+.service-process {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.process-step {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    width: calc(20% - 20px);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.process-step:hover {
+    background: #2a7d2e;
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.process-step:hover h3,
+.process-step:hover p,
+.process-step:hover .step-number {
+    color: #fff;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #2a7d2e;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    transition: all 0.3s;
+}
+
+.process-step h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.process-step p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Services CTA Section */
+.services-cta {
+    padding: 80px 0;
+    background: linear-gradient(rgba(42, 125, 46, 0.9), rgba(42, 125, 46, 0.9)), url('urnbangreening.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+}
+
+.services-cta .cta-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.services-cta .cta-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #2a7d2e;
+    border: 2px solid #fff;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .comprehensive-solutions .container {
+        flex-direction: column;
+    }
+    
+    .solutions-image {
+        margin-top: 40px;
+    }
+    
+    .additional-service {
+        flex-direction: column;
+    }
+    
+    .additional-service img,
+    .service-details {
+        width: 100%;
+    }
+    
+    .process-step {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .services-hero .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .process-step {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        height: 50vh;
+    }
+    
+    .services-hero .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .services-hero .hero-content p {
+        font-size: 16px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .process-step {
+        width: 100%;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero {
+        height: 40vh;
+    }
+    
+    .services-hero .hero-content h1 {
+        font-size: 24px;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+    
+    .solution-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .solution-icon {
+        margin-top: 0;
+    }
+}
+    </style>
 </head>
 
 <body>
     <nav>
         <input type="checkbox" id="check">
-        <label class="logo">LEMARA INTERNATIONAL</label>
+        <label class="logo">
+            <img src="Logo.jpg" alt="Lemara International Logo" class="logo-img">
+            LEMARA INTERNATIONAL
+        </label>
         <ul>
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li class="active"><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <!-- Mobile menu button -->
@@ -28,46 +525,255 @@
         </label>
     </nav>
 
-    <section class="services1">
-        <h2>Our Expert Landscaping Services</h2>
-        <p>Transforming spaces, Elevating Atmosphere </p>
-        <ul>
-            <li>Seedling distribution: Providing a number of trees seedling good for different environment, including
-                fruit trees in timber and indigenous species for planting in homes,garden and community Land.</li>
-            <li>Community engagement: Mobilizing local communities to participate in tree planting activities often with
-                awareness campaigning on the importance of tree conservation.</li>
-        </ul>
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="hero-content">
+            <h1>Our Professional Services</h1>
+            <p>Comprehensive landscaping solutions tailored to your needs</p>
+        </div>
     </section>
-    <section class="services2">
-        <h2>Comprehensive Landscaping Solutions</h2>
-        <p>Emhancing the beauty and functionality of our outdoor services</p>
-        <img src="roadss.jpg" alt="">
-    </section>
-    <section class="services3">
-        <h2>More Services offered</h2>
-        <ul>
-            <Li>Providing tree seeding for community climate change planting organising large scale tree planting, mobalising
-            in educating communities on sustainable tree planting practices, establishing tree nurseries managing carbon offset project through
-            tree planting.</Li>
-            <img src="International-School-of-Uganda.jpg" alt="">
-            
-        
-            <li>Agro Forestry programs</li>
-            <li>Carbon offset plans: Offering deal for individual and companies to offset the carbon footprint by
-            planting species that contribute to Carbon sequestration.</li>
-            <li>Tree clubs programs:At school we ensure that student are tree plant initiatives of fostering
-            environmental awareness.</li>
-            <img src="de-heus-factory.jpg" alt="">
-            <li>Monitoring and evaluation: Always the survival percentage rate of planted trees and can be assess to the
-                impact of tree planting project.</li>
-        </ul>
-                
-    </section>
-<footer>
-    <p>&copy Lemara Landscaping 2025. All Rights Reserved. </p>
-</footer>
 
+    <!-- Main Services Section -->
+    <section class="main-services">
+        <div class="section-header">
+            <h2>Our Core Landscaping Services</h2>
+            <p>Transforming spaces, elevating atmosphere with expert care</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Seedling Distribution</h3>
+                <p>We provide a wide variety of tree seedlings suitable for different environments, including fruit
+                    trees, timber, and indigenous species for planting in homes, gardens, and community lands.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Diverse species selection</li>
+                    <li><i class="fas fa-check"></i> Climate-appropriate varieties</li>
+                    <li><i class="fas fa-check"></i> Planting guidance included</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community Engagement</h3>
+                <p>We mobilize local communities to participate in tree planting activities with awareness campaigns
+                    about the importance of tree conservation and environmental stewardship.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Educational workshops</li>
+                    <li><i class="fas fa-check"></i> Community planting events</li>
+                    <li><i class="fas fa-check"></i> Long-term maintenance plans</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h3>Agroforestry Programs</h3>
+                <p>Integrated land use systems that combine agriculture and forestry to create more diverse, productive,
+                    and sustainable land-use systems.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Sustainable farming solutions</li>
+                    <li><i class="fas fa-check"></i> Increased biodiversity</li>
+                    <li><i class="fas fa-check"></i> Improved soil health</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Solutions Section -->
+    <section class="comprehensive-solutions">
+        <div class="container">
+            <div class="solutions-content">
+                <h2>Comprehensive Landscaping Solutions</h2>
+                <p>Enhancing the beauty and functionality of outdoor spaces through innovative design and expert
+                    implementation.</p>
+
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="solution-text">
+                        <h3>Carbon Offset Plans</h3>
+                        <p>We offer deals for individuals and companies to offset their carbon footprint by planting
+                            species that contribute to carbon sequestration and environmental restoration.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="solution-text">
+                        <h3>School Tree Club Programs</h3>
+                        <p>We establish and support tree planting initiatives in schools to foster environmental
+                            awareness among students and create green school environments.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="solution-text">
+                        <h3>Monitoring & Evaluation</h3>
+                        <p>We track the survival rates of planted trees and assess the impact of tree planting projects
+                            to ensure long-term success and environmental benefit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solutions-image">
+                <img src="download.jpg" alt="Comprehensive Landscaping Solutions">
+                <div class="image-overlay">
+                    <p>Over 50 successful projects completed across Lira</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section class="additional-services">
+        <div class="section-header">
+            <h2>Additional Services</h2>
+            <p>Specialized solutions for unique landscaping needs</p>
+        </div>
+
+        <div class="services-container">
+            <div class="additional-service">
+                <img src="urnbangreening.jpg" alt="Large Scale Planting">
+                <div class="service-details">
+                    <h3>Large Scale Planting Initiatives</h3>
+                    <p>We organize and implement large-scale tree planting projects, mobilizing volunteers and educating
+                        communities on sustainable tree planting practices.</p>
+                    <ul>
+                        <li>Urban greening projects</li>
+                        <li>Reforestation programs</li>
+                        <li>Corporate social responsibility events</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="additional-service reverse">
+                <img src="seeds.jpg" alt="Tree Nurseries">
+                <div class="service-details">
+                    <h3>Tree Nursery Establishment</h3>
+                    <p>We help establish and manage tree nurseries to ensure a sustainable supply of quality seedlings
+                        for all planting initiatives.</p>
+                    <ul>
+                        <li>Site selection and preparation</li>
+                        <li>Seed sourcing and propagation</li>
+                        <li>Nursery management training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process Section -->
+    <section class="service-process">
+        <div class="section-header">
+            <h2>Our Service Process</h2>
+            <p>How we deliver exceptional results every time</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Consultation</h3>
+                <p>We begin with a thorough discussion to understand your needs and vision for the project.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Site Assessment</h3>
+                <p>Our experts evaluate your space to determine the best solutions and approaches.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Design & Planning</h3>
+                <p>We create customized plans that meet your requirements and budget.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Implementation</h3>
+                <p>Our skilled team executes the project with precision and attention to detail.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h3>Maintenance</h3>
+                <p>We provide ongoing care to ensure your landscape thrives for years to come.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Contact us today to discuss your landscaping needs with our expert team.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+                <a href="tel:+256778785487" class="btn-secondary">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="Logo.jpg" alt="Lemara International Logo" class="footer-logo">
+                <p>Lemara International is a premier landscaping company dedicated to creating beautiful, sustainable
+                    outdoor environments.</p>
+                <div class="socials">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Lira, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 778 785487</p>
+                <p><i class="fas fa-envelope"></i> info@lemarainternational.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lemara International. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+
+    </script>
 </body>
-
 
 </html>

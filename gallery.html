@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Lemara International</title>
+    <title>Gallery - Lemara International</title>
     <!-- Box Icons for menu button -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Font Awesome for icons -->
@@ -36,7 +36,7 @@
             line-height: 1.6;
         }
 
-        /* Navigation - Keep this exactly as in the home page */
+        /* Navigation - Matching the home page */
         nav {
             background: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -64,39 +64,40 @@
         }
 
         nav ul {
-    display: flex;
-    list-style: none;
-}
+            display: flex;
+            list-style: none;
+        }
 
-nav ul li {
-    margin-left: 30px;
-}
+        nav ul li {
+            margin-left: 30px;
+        }
 
-nav ul li a {
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-    text-decoration: none;
-}
+        nav ul li a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
 
-nav ul li a:hover, nav ul li.active a {
-    color: #2a7d2e;
-}
+        nav ul li a:hover,
+        nav ul li.active a {
+            color: #2a7d2e;
+        }
 
-.checkbtn {
-    font-size: 30px;
-    color: #2a7d2e;
-    cursor: pointer;
-    display: none;
-}
+        .checkbtn {
+            font-size: 30px;
+            color: #2a7d2e;
+            cursor: pointer;
+            display: none;
+        }
 
-#check {
-    display: none;
-}
+        #check {
+            display: none;
+        }
 
-        /* Contact Page Specific Styles */
-        .contact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('road.jpg') no-repeat center center;
+        /* Gallery Hero Section */
+        .gallery-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('unrban.jpg');
             background-size: cover;
             background-position: center;
             height: 50vh;
@@ -108,162 +109,137 @@ nav ul li a:hover, nav ul li.active a {
             color: #fff;
         }
 
-        .contact-hero-content h1 {
+        .gallery-hero-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
 
-        .contact-hero-content p {
+        .gallery-hero-content p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .contact-container {
+        /* Gallery Section */
+        .gallery-section {
             padding: 80px 10%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            justify-content: center;
+            text-align: center;
         }
 
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-info h2 {
-            font-size: 28px;
-            margin-bottom: 30px;
+        .gallery-section h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
             color: var(--primary-color);
             position: relative;
         }
 
-        .contact-info h2::after {
+        .gallery-section h2::after {
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 0;
-            width: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 3px;
             background-color: var(--primary-color);
         }
 
-        .contact-details {
-            margin-bottom: 30px;
+        .gallery-filter {
+            margin-bottom: 40px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            font-size: 20px;
-            color: var(--primary-color);
-            margin-right: 15px;
-            margin-top: 3px;
-        }
-
-        .contact-text h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .contact-text p,
-        .contact-text a {
-            color: var(--light-text);
-            transition: color 0.3s;
-        }
-
-        .contact-text a:hover {
-            color: var(--primary-color);
-        }
-
-        .business-hours {
-            margin-top: 40px;
-        }
-
-        .hours-list {
-            list-style: none;
-        }
-
-        .hours-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .hours-list li:last-child {
-            border-bottom: none;
-        }
-
-        .hours-list span:first-child {
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 8px 20px;
+            margin: 0 5px;
+            cursor: pointer;
             font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.3s;
+            border-radius: 30px;
         }
 
-        .social-media {
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background-color: var(--dark-green);
-            transform: translateY(-3px);
-        }
-
-        .contact-map {
-            flex: 1;
-            min-width: 300px;
-            height: 500px;
+        .gallery-item {
+            position: relative;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 250px;
         }
 
-        .contact-map iframe {
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--white);
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay h3 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .gallery-item-overlay p {
+            font-size: 14px;
+            color: #ddd;
         }
 
         /* Call to Action Section */
-        .contact-cta {
+        .gallery-cta {
             background-color: var(--primary-color);
             padding: 60px 10%;
             text-align: center;
             color: var(--white);
+            margin-top: 50px;
         }
 
-        .contact-cta h2 {
+        .gallery-cta h2 {
             font-size: 36px;
             margin-bottom: 20px;
         }
 
-        .contact-cta p {
+        .gallery-cta p {
             font-size: 18px;
             margin-bottom: 30px;
             max-width: 700px;
@@ -337,28 +313,42 @@ nav ul li a:hover, nav ul li.active a {
                 left: 0;
             }
 
-            .contact-hero {
+            .gallery-hero {
                 height: 40vh;
                 padding: 0 5%;
             }
 
-            .contact-hero-content h1 {
+            .gallery-hero-content h1 {
                 font-size: 36px;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
 
         @media (max-width: 480px) {
-            .contact-hero-content h1 {
+            .gallery-hero-content h1 {
                 font-size: 28px;
             }
 
-            .contact-hero-content p {
+            .gallery-hero-content p {
                 font-size: 16px;
             }
 
-            .contact-info,
-            .contact-map {
-                min-width: 100%;
+            .gallery-section h2,
+            .gallery-cta h2 {
+                font-size: 28px;
+            }
+
+            .filter-btn {
+                padding: 6px 12px;
+                margin: 0 3px;
+                font-size: 14px;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -437,6 +427,7 @@ nav ul li a:hover, nav ul li.active a {
         .footer-section.links a {
             color: #bbb;
             transition: color 0.3s;
+            text-decoration: none;
         }
 
         .footer-section.links a:hover {
@@ -496,11 +487,11 @@ nav ul li a:hover, nav ul li.active a {
             LEMARA INTERNATIONAL
         </label>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
+            <li ><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <!-- Mobile menu button -->
         <label for="check" class="checkbtn">
@@ -508,101 +499,103 @@ nav ul li a:hover, nav ul li.active a {
         </label>
     </nav>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="contact-hero-content">
-            <h1>Get In Touch With Us</h1>
-            <p>We'd love to hear from you! Reach out for inquiries, quotes, or to schedule a consultation for your
-                landscaping needs.</p>
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-content">
+            <h1>Our Portfolio</h1>
+            <p>Explore our collection of completed projects showcasing our landscaping expertise and creativity</p>
         </div>
     </section>
 
-    <!-- Contact Content Section -->
-    <div class="contact-container">
-        <div class="contact-info">
-            <h2>Contact Information</h2>
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2>Project Gallery</h2>
+        <p>Browse through our work and get inspired for your own landscaping project</p>
 
-            <div class="contact-details">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Our Location</h3>
-                        <p>Lira City, Uganda</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Phone Number</h3>
-                        <p><a href="tel:+256778785487">+256 778 785487</a></p>
-                        <p><a href="tel:+256789562720">+256 789 562720</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Email Address</h3>
-                        <p><a href="mailto:info@lemarainternational.com">info@lemarainternational.com</a></p>
-                        <p><a href="mailto:lemara@gmail.com">lemara@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="business-hours">
-                <h3>Business Hours</h3>
-                <ul class="hours-list">
-                    <li>
-                        <span>Monday - Friday</span>
-                        <span>8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span>Saturday</span>
-                        <span>9:00 AM - 2:00 PM</span>
-                    </li>
-                    <li>
-                        <span>Sunday</span>
-                        <span>Closed</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="social-media">
-                <h3>Follow Us</h3>
-                <p>Stay connected with us on social media for updates and inspiration</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="garden">Garden Design</button>
+            <button class="filter-btn" data-filter="lawn">Lawn Care</button>
         </div>
 
-        <div class="contact-map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.647024665785!2d32.89981461475393!3d2.2475989984181927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771f8a9d9f4f9a5%3A0x1c3e3e3e3e3e3e3e!2sLira%2C%20Uganda!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-                allowfullscreen="" loading="lazy"></iframe>
+        <div class="gallery-container">
+            <!-- Residential Projects -->
+            <div class="gallery-item" data-category="residential">
+                <img src="residence.jpg" alt="Residential Landscape Design">
+                <div class="gallery-item-overlay">
+                    <h3>School</h3>
+                    <p>Complete garden makeover with water feature</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="residential">
+                <img src="backyard.jpg" alt="Backyard Transformation">
+                <div class="gallery-item-overlay">
+                    <h3>Backyard</h3>
+                    <p>Backyard transformation with outdoor living space</p>
+                </div>
+            </div>
+
+            <!-- Commercial Projects -->
+            <div class="gallery-item" data-category="commercial">
+                <img src="Ridge-view.jpg" alt="Hotel Landscape">
+                <div class="gallery-item-overlay">
+                    <h3>Grand Hotel Lira</h3>
+                    <p>Commercial landscaping with sustainable plants</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="commercial">
+                <img src="road.jpg" alt="Office Park">
+                <div class="gallery-item-overlay">
+                    <h3>School Parking Yard</h3>
+                    <p>Modern school park landscaping</p>
+                </div>
+            </div>
+
+            <!-- Garden Design Projects -->
+            <div class="gallery-item" data-category="garden">
+                <img src="hotel.jpg" alt="Tropical Garden">
+                <div class="gallery-item-overlay">
+                    <h3>Tropical Paradise</h3>
+                    <p>Lush tropical garden with native plants</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="garden">
+                <img src="roadss.jpg" alt="Formal Garden">
+                <div class="gallery-item-overlay">
+                    <h3>Formal Garden</h3>
+                    <p>Symmetrical design with ornamental features</p>
+                </div>
+            </div>
+
+            <!-- Lawn Care Projects -->
+            <div class="gallery-item" data-category="lawn">
+                <img src="lawn.jpg" alt="Lawn Restoration">
+                <div class="gallery-item-overlay">
+                    <h3>Lawn Restoration</h3>
+                    <p>Complete lawn rehabilitation project</p>
+                </div>
+            </div>
+
+            
+            
         </div>
-    </div>
+    </section>
 
     <!-- Call to Action Section -->
-    <section class="contact-cta">
-        <h2>Ready to Start Your Project?</h2>
-        <p>Contact us today to discuss your landscaping needs and get a free consultation.</p>
+    <section class="gallery-cta">
+        <h2>Inspired By Our Work?</h2>
+        <p>Let us bring the same quality and creativity to your outdoor space</p>
         <div class="cta-buttons">
             <a href="tel:+256778785487" class="btn-primary">
                 <i class="fas fa-phone"></i> Call Now
             </a>
-            <a href="mailto:info@lemarainternational.com" class="btn-secondary">
-                <i class="fas fa-envelope"></i> Email Us
+            <a href="contact.html" class="btn-secondary">
+                <i class="fas fa-envelope"></i> Get a Quote
             </a>
         </div>
     </section>
@@ -667,6 +660,29 @@ nav ul li a:hover, nav ul li.active a {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
+                });
+            });
+
+            // Gallery Filter Functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
                 });
             });
 

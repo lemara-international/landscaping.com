@@ -1,23 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About- Lemara International</title>
+    <title>About Us - Lemara International</title>
     <!-- Box Icons for menu button -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Page Specific Styles */
+.about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.about-hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.about-hero-content p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Our Story Section */
+.our-story {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.story-content {
+    flex: 1;
+}
+
+.story-content h2 {
+    font-size: 36px;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.story-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.story-image:hover img {
+    transform: scale(1.03);
+}
+
+.milestones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.milestone {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.milestone .number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2a7d2e;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.milestone .label {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Quality Assurance Section */
+.quality-assurance {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.quality-assurance .container {
+    align-items: center;
+}
+
+.quality-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.quality-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.quality-content {
+    flex: 1;
+    padding-left: 50px;
+}
+
+.quality-content h2 {
+    font-size: 36px;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+}
+
+.quality-content p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.quality-list {
+    margin: 30px 0;
+    list-style: none;
+}
+
+.quality-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #444;
+}
+
+.quality-list i {
+    color: #2a7d2e;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Our Team Section */
+.our-team {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-header {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: #2a7d2e;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 5px solid #f1f1f1;
+}
+
+.team-member h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.team-member .position {
+    color: #2a7d2e;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.team-member .bio {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #2a7d2e;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1f5e22;
+}
+
+/* Our Values Section */
+.our-values {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.values-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 250px;
+    transition: all 0.3s;
+}
+
+.value-card:hover {
+    background: #2a7d2e;
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.value-card:hover h3,
+.value-card:hover p,
+.value-card:hover .value-icon i {
+    color: #fff;
+}
+
+.value-icon {
+    margin-bottom: 20px;
+}
+
+.value-icon i {
+    font-size: 40px;
+    color: #2a7d2e;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.value-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* About CTA Section */
+.about-cta {
+    padding: 80px 0;
+    background: linear-gradient(rgba(42, 125, 46, 0.9), rgba(42, 125, 46, 0.9)), url('treeseedlings.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #2a7d2e;
+    border: 2px solid #fff;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .quality-assurance .container {
+        flex-direction: column-reverse;
+    }
+    
+    .quality-content {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    
+    .team-member {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .about-hero-content p {
+        font-size: 18px;
+    }
+    
+    .milestone {
+        min-width: 120px;
+    }
+    
+    .team-member {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .value-card {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero {
+        height: 50vh;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .milestones {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .value-card {
+        width: 100%;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-text, .about-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        top: 70px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    
+    nav ul li {
+        margin: 20px 0;
+    }
+    
+    #check:checked ~ ul {
+        left: 0;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 100px 5% 60px;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .services-container, .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-card, .testimonial-card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .services-preview h2, 
+    .about-text h2, 
+    .testimonials h2, 
+    .cta h2 {
+        font-size: 28px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+      
+    </style>
 </head>
+
 <body>
     <nav>
         <input type="checkbox" id="check">
-        <label class="logo">LEMARA INTERNATIONAL</label>
+        <label class="logo">
+            <img src="Logo.jpg" alt="Lemara International Logo" class="logo-img">
+            LEMARA INTERNATIONAL
+        </label>
         <ul>
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About </a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <!-- Mobile menu button -->
@@ -26,33 +568,166 @@
         </label>
     </nav>
 
-    <section class="about">
-        <h2>Quality Assurance</h2>
-        <p>At Lemara international we specialise in creating stunning Landscape that enhance the beauty and functionality
-            of your outdoor spaces. Our commitment to excellence ensures that every project reflects our dedication to quality
-            and innovation.
-        
-        </p>
-        <img src="road.jpg" alt="">
-        
-        <p>We're dedicated to maintaining high standards in all our landscaping projects, 
-            ensuring that every detail is meticulously crafted to meet our clients expectations.
-        </p>
-        <button>
-            <a href="services.html">Learn More</a>
-        </button>
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>About Lemara International</h1>
+            <p>Transforming outdoor spaces with passion and expertise since 2010</p>
+        </div>
     </section>
 
-    <section class="about1">
-        <h2>Our Experts</h2>
-        <p>Skilled professionals ready to transform your outdoor spaces</p>
-        <img src="roads.jpg" alt="">
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>Founded in afew years back, Lemara International began as a small landscaping team with a big vision. What
+                    started as a passion project between friends has grown into one of the most respected landscaping
+                    companies in the region.</p>
+                <p>Over the years, we've transformed many of residential and commercial properties, each project
+                    reflecting our commitment to quality, innovation, and environmental sustainability.</p>
+                <div class="milestones">
+                    <div class="milestone">
+                        <span class="number">5+</span>
+                        <span class="label">Projects Completed</span>
+                    </div>
+                    <div class="milestone">
+                        <span class="number">2+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                    <div class="milestone">
+                        <span class="number">100%</span>
+                        <span class="label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="members.jpg" alt="Our Story">
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Assurance Section -->
+    <section class="quality-assurance">
+        <div class="container">
+            <div class="quality-image">
+                <img src="eucalptus.jpg" alt="Quality Assurance">
+            </div>
+            <div class="quality-content">
+                <h2>Quality Assurance</h2>
+                <p>At Lemara International, we specialize in creating stunning landscapes that enhance the beauty and
+                    functionality of your outdoor spaces. Our commitment to excellence ensures that every project
+                    reflects our dedication to quality and innovation.</p>
+                <p>We're dedicated to maintaining high standards in all our landscaping projects, ensuring that every
+                    detail is meticulously crafted to meet our clients' expectations.</p>
+                <ul class="quality-list">
+                    <li><i class="fas fa-check-circle"></i> Premium quality materials</li>
+                    <li><i class="fas fa-check-circle"></i> Sustainable practices</li>
+                    <li><i class="fas fa-check-circle"></i> Attention to detail</li>
+                    <li><i class="fas fa-check-circle"></i> Industry-leading warranties</li>
+                </ul>
+                <a href="services.html" class="btn-primary">Our Services <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
     </section>
 
     
+    <!-- Our Values Section -->
+    <section class="our-values">
+        <div class="section-header">
+            <h2>Our Core Values</h2>
+            <p>The principles that guide everything we do</p>
+        </div>
+        <div class="values-container">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainability</h3>
+                <p>We prioritize eco-friendly materials and practices to minimize environmental impact.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Excellence</h3>
+                <p>We never compromise on quality, delivering only the best results for our clients.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>We stay ahead of industry trends to offer cutting-edge landscaping solutions.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Passion</h3>
+                <p>Our love for landscaping shows in every project we undertake.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Outdoor Space?</h2>
+            <p>Contact us today to discuss your landscaping vision with our expert team.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+                <a href="tel:+256778785487" class="btn-secondary">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy Lemara Landscaping 2025. All Rights Reserved. </p>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="Logo.jpg" alt="Lemara International Logo" class="footer-logo">
+                <p>Lemara International is a premier landscaping company dedicated to creating beautiful, sustainable
+                    outdoor environments.</p>
+                <div class="socials">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Lira, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 778 785487</p>
+                <p><i class="fas fa-envelope"></i> info@lemarainternational.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lemara International. All Rights Reserved.</p>
+        </div>
     </footer>
-   
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
+
 </html>
